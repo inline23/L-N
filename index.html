@@ -1,0 +1,189 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>L&N Store</title>
+  <link rel="stylesheet" href="index.css">
+
+</head>
+<body>
+
+  <!-- CART PANEL -->
+  <div class="cart-panel-overlay" id="cartOverlay">
+    <div class="cart-panel">
+      <div class="cart-head">
+        <span id="cartTitle"></span>
+        <button class="close-cart-btn" id="closeCartBtn">✕</button>
+      </div>
+      <div class="cart-body" id="cartItemsContainer">
+        <div class="cart-empty" id="cartEmptyMsg"></div>
+      </div>
+      <div class="cart-foot">
+        <div class="sum-row">
+          <span id="subtotalLabel"></span>
+          <span id="subtotalVal">EGP 0.00</span>
+        </div>
+        <div class="sum-row">
+          <span id="shippingLabel"></span>
+          <span id="shippingVal">—</span>
+        </div>
+        <div class="sum-row total">
+          <span id="totalLabel"></span>
+          <span id="totalVal">EGP 0.00</span>
+        </div>
+        <button class="checkout-btn" id="checkoutBtn"></button>
+      </div>
+    </div>
+  </div>
+
+  <!-- NAVBAR -->
+  <header class="navbar">
+    <div class="navbar-inner">
+      <div class="brand">
+        <div class="brand-icon">👜</div>
+        <span id="brandName">L&N</span>
+      </div>
+
+      <div class="nav-right">
+        <div class="search-wrap">
+          <span class="search-icon">🔍</span>
+          <input
+            id="searchInput"
+            class="search-input"
+          />
+        </div>
+
+        <select id="sortSelect" class="sort-select">
+          <option value="featured">featured</option>
+          <option value="price-asc">price-asc</option>
+          <option value="price-desc">price-desc</option>
+          <option value="rating">rating</option>
+        </select>
+
+        <button class="cart-btn" id="openCartBtn">
+          <span id="cartBtnLabel"></span>
+          <span class="cart-count hidden" id="cartCount">0</span>
+        </button>
+
+        <button class="lang-btn" id="langToggleBtn">عربي / English</button>
+      </div>
+    </div>
+  </header>
+
+  <main class="container">
+    <!-- HERO -->
+    <section class="hero">
+      <div class="hero-bg"></div>
+      <div class="hero-grid">
+        <div class="hero-left">
+          <h1 id="heroTitle"></h1>
+          <p id="heroDesc"></p>
+          <div class="category-chips" id="categoryChips">
+            <!-- dynamic buttons -->
+          </div>
+        </div>
+
+        <div class="hero-right">
+          <div class="quick-card">
+            <div class="quick-card-title" id="quickFindTitle"></div>
+
+            <div style="position:relative;margin-bottom:.75rem;">
+              <span class="search-icon" style="left:.75rem;">🔍</span>
+              <input
+                id="quickSearchInput"
+                class="input-full"
+                style="padding-left:2rem;"
+              />
+            </div>
+
+            <div class="flex-row" style="margin-bottom:.75rem;">
+              <div class="select-block">
+                <select id="categorySelect" class="select-full">
+                  <!-- dynamic categories -->
+                </select>
+              </div>
+              <div class="select-block">
+                <select id="sortSelect2" class="select-full">
+                  <option value="featured">featured</option>
+                  <option value="price-asc">price-asc</option>
+                  <option value="price-desc">price-desc</option>
+                  <option value="rating">rating</option>
+                </select>
+              </div>
+            </div>
+
+            <div class="size-box">
+              <div class="field-label">
+                <span>🪄</span>
+                <span id="sizeLabel"></span>
+              </div>
+              <div class="sizes-grid" id="sizeGrid">
+                <!-- dynamic sizes -->
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- PRODUCTS -->
+    <section>
+      <div class="products-header">
+        <h2 id="productsHeader"></h2>
+        <div class="stats-row">
+          <span class="pill" id="itemsCountPill">0 items</span>
+          <button class="clear-btn" id="clearCategoryBtn">
+            <span class="x-icon">✕</span>
+            <span id="clearCategoryText"></span>
+          </button>
+        </div>
+      </div>
+
+      <div id="productsGrid" class="grid-products">
+        <!-- product cards go here -->
+      </div>
+
+      <div id="noResultsBox" class="empty-box hidden"></div>
+    </section>
+  </main>
+
+  <footer class="footer">
+    <div class="footer-grid">
+      <div>
+        <div class="footer-col-title" style="display:flex;align-items:center;gap:.5rem;font-weight:600;">
+          <div class="brand-icon" style="width:20px;height:20px;font-size:.6rem;">👜</div>
+          <span id="footerBrand">L&N</span>
+        </div>
+        <p class="footer-text" id="footerAbout"></p>
+      </div>
+
+      <div>
+        <div class="footer-col-title" id="supportTitle"></div>
+        <ul class="footer-list">
+          <li id="supportShip"></li>
+          <li id="supportSize"></li>
+          <li id="supportContact"></li>
+        </ul>
+      </div>
+
+      <div>
+        <div class="footer-col-title" id="newsletterTitle"></div>
+        <div class="newsletter-row">
+          <input class="newsletter-input" id="newsletterInput" />
+          <button class="newsletter-btn" id="newsletterBtn"></button>
+        </div>
+      </div>
+    </div>
+
+    <div class="footer-bottom" id="footerCopy"></div>
+    <div class="footer-bottom">© <span id="yearNow"></span> L&N</div>
+  </footer>
+
+ 
+<script src="index.js"></script>
+
+</body>
+
+
+</html>
